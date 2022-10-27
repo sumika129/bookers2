@@ -1,0 +1,28 @@
+<%= render 'userinfo',books:@books %>
+
+      <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Opinion</th>
+            </tr>
+          </thead>
+          <% @books.each do |book| %>
+          <tbody>
+            <tr>
+              <td><%= image_tag book.get_image %></td>
+              <td><%= link_to book.title, book_path(book) %></td>
+              <td><%= book.body %></td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>  
+
+
