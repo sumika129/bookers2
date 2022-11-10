@@ -9,7 +9,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
@@ -36,6 +35,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+
   end
 
   def update
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   
   def correct_user
     @book = Book.find(params[:id])
-    redirect_to(books_path) unless @user == current_user
+    redirect_to(books_path) unless @book.user == current_user
   end
 
 end

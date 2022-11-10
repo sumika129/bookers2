@@ -14,21 +14,21 @@
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="/"><%= link_to "Bookers", root_path %></a>
+          <%= link_to "Bookers", root_path, class: "navbar-brand" %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              
+
             <% if user_signed_in? %>
             <li>
-              <i class="fa fa-home" aria-hidden="true"></i>
+              <i class="fas fa-home"></i>
               <%= link_to "Home", user_path(current_user) %>
             </li>
             <li>
-              <i class="fa fa-users" aria-hidden="true"></i>
+              <i class="fas fa-users"></i>
               <%= link_to "Users", users_path %>
             </li>
             <li>
@@ -36,12 +36,12 @@
               <%= link_to "Books", books_path %>
             </li>
             <li>
-              <i class="fas fa-sign-in-alt"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
             </li>
           <% else %>
             <li>
-              <i class="fa fa-home" aria-hidden="true"></i>
+              <i class="fas fa-home"></i>
               <%= link_to "Home", root_path %>
             </li>
             <li>
@@ -49,7 +49,7 @@
               <%= link_to "About", about_path %>
             </li>
             <li>
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
+              <i class="fas fa-user-plus"></i>
               <%= link_to "Sign up", new_user_registration_path %>
             </li>
             <li>
@@ -57,7 +57,7 @@
               <%= link_to "Log in", new_user_session_path %>
             </li>
           <% end %>
-          
+
           </ul>
           </div>
         </div>
